@@ -134,4 +134,4 @@ async def reload(ctx):
     await bot.reload_extension("Cogs")
     await ctx.send('reloaded')
 # bot token
-bot.run("MTE1NjA0MTE5NjY3MDU2MjMzNQ.GhzvXg.r-GeKuO_5bKhajfmgKFPnTmC09GNn3EMCKQYTs")
+bot.run("token")
