@@ -48,7 +48,7 @@ async def hello(ctx): # context
     await ctx.send(f'6. Saya bisa membantumu memberikan meme hari ini dengan ketik $mem')
     await ctx.send(f'7. Saya bisa membantumu memberikan coinflip dengan ketik $coinflip')
     await ctx.send(f'8. Saya bisa membantumu memberikan random dice dengan ketik $dice')
-    await ctx.send(f'9. Saya bisa membantumu memperbarui versi bot ketik $unload lalu ketik $load')
+    await ctx.send(f'9. Saya bisa membantumu memperbarui versi bot ketik $unload lalu ketik $load dan ketik kembali $load')
     await ctx.send(f'10. Saya bisa membantumu memperbaiki bug ketik $reload')
     await ctx.send(f'11. Bantuan/saran ketik $help') 
     await ctx.send('=========================')
