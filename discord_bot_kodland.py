@@ -48,7 +48,9 @@ async def hello(ctx): # context
     await ctx.send(f'6. Saya bisa membantumu memberikan meme hari ini dengan ketik $mem')
     await ctx.send(f'7. Saya bisa membantumu memberikan coinflip dengan ketik $coinflip')
     await ctx.send(f'8. Saya bisa membantumu memberikan random dice dengan ketik $dice')
-    await ctx.send(f'9. Bantuan ketik $help') 
+    await ctx.send(f'9. Saya bisa membantumu memperbarui versi bot ketik $unload lalu ketik $load')
+    await ctx.send(f'10. Saya bisa membantumu memperbaiki bug ketik $reload')
+    await ctx.send(f'11. Bantuan/saran ketik $help') 
     await ctx.send('=========================')
     await ctx.send(f'daftar kata: CRINGE, BRB, LOL, GG, AFK, CREEPY(dev.)')
     await ctx.send(f'daftar kata penghasil emoji: marah, terbahak, keren, sedih, senyum, ok(dev.)')
@@ -134,4 +136,4 @@ async def reload(ctx):
     await bot.reload_extension("Cogs")
     await ctx.send('reloaded')
 # bot token
-bot.run("token")
+bot.run(BOT TOKEN)
