@@ -1,6 +1,8 @@
 discord-bot-elvan-kodland (Language of bot Indonesia)
 experimental discord bot backed by python 3 and discord API
-
+	
+	# function initialization by $ prefix
+	bot = commands.Bot(command_prefix='$', intents=intents, help_command= None)
 	@bot.event # decorator to modify python function itself for anything happens with server
 	@bot.command() # calls the function to run
 
@@ -21,4 +23,5 @@ experimental discord bot backed by python 3 and discord API
 	async def dt(ctx, arg) := to get the meaning of modern wording or emoji
 	async def load(ctx) := to load the new Cogs file(class)
 	async def unload(ctx) := to unload the Cogs
-	async def reload(ctx) := to load the Cogs file(class) so the bot will keep runing even there is new update or feature
+	async def reload(ctx) := to reload the Cogs file(class) so the bot will keep runing even there is new update or feature
+	async def setalarm(self,ctx,date) := to set alarm   	
