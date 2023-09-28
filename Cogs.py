@@ -6,9 +6,12 @@ class MyCog(commands.Cog):
     # like event
     @commands.Cog.listener()
     async def on_message(self,msg):
-        if msg.content == "Hey":
-            await msg.channel.send("Hi there!")
-    # like function
+        if msg.content == "$load":
+            await msg.channel.send("Hi there are new feature!")
+            await msg.channel.send("type $setalarm HH:MM e.g. $setalarm 18:45")
+        elif msg.content == "$reload":
+            await msg.channel.send("Hi there, the bug is fixed")
+    # like function to call black and send string
     @commands.command()
     async def black(self,ctx):
         await ctx.channel.send("White is the opposite of black")
