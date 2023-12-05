@@ -1,35 +1,43 @@
-#kodland-bot
+# This example requires the 'members' and 'message_content' privileged intents to function.
+
 import discord
+from discord.ext import commands
 import random
-# local own library
-from pass_generator import gen_pass
-# Variabel intents menyimpan hak istimewa bot
+
+description = '''An example bot to showcase the discord.ext.commands extension
+module.
+
+There are a number of utility commands being showcased here.'''
+
 intents = discord.Intents.default()
-# Mengaktifkan hak istimewa message-reading
+intents.members = True
 intents.message_content = True
-# Membuat bot di variabel klien dan mentransfernya hak istimewa
-client = discord.Client(intents=intents)
+# command prefix 
+bot = commands.Bot(command_prefix='?', description=description, intents=intents)
 
-@client.event
+
+@bot.event
 async def on_ready():
-    print(f'Kita telah masuk sebagai {client.user}')
+    print(f'Logged in as {bot.user} (ID: {bot.user.id})')
+    print('------')
 
-@client.event
-async def on_message(message):
-    if message.author == client.user:
-        return
-    if message.content.startswith('$halo'):
-        await message.channel.send("Hi!")
-    elif message.content.startswith('$bye'):
-        await message.channel.send("\U0001f642")
-    elif message.content.startswith('pass'):
-        await message.channel.send(f"Kata sandi yang dihasilkan adalah {gen_pass(10)}")
-@client.event    
-async def on_member_join(self, member):
-    guild = member.guild
-    if guild.system_channel is not None:
-        to_send = f'Welcome {member.mention} to {guild.name}!'
-        await guild.system_channel.send(to_send)
-        await guild.system_channel.send("try $halo or $bye or pass")
 
-client.run("MTE3ODkyNzkxNjc4NTA5MDU5MA.GbaQZt.XPIzlvWjh9kaR_PruSuL9mwO558TYFIT5DCByM")
+@bot.command()
+async def add(ctx, left: int, right: int):
+    """Adds two numbers together."""
+    await ctx.send(left + right)
+
+
+@bot.command()
+async def repeat(ctx, times: int, content='repeating...'):
+    """Repeats a message multiple times."""
+    for i in range(times):
+        await ctx.send(content)
+
+
+@bot.command()
+async def joined(ctx, member: discord.Member):
+    """Says when a member joined."""
+    await ctx.send(f'{member.name} joined {discord.utils.format_dt(member.joined_at)}')
+
+bot.run('token')
