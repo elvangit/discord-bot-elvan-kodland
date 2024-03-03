@@ -2,6 +2,7 @@ discord-bot-elvan-kodland (Language of bot Indonesia)
 experimental discord bot backed by python 3 and discord API
 	
 	# function initialization by $ prefix
+ 	# e.g. $pw
 	bot = commands.Bot(command_prefix='$', intents=intents, help_command= None)
 	@bot.event # decorator to modify python function itself for anything happens with server
 	@bot.command() # calls the function to run
