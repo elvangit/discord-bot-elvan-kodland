@@ -127,4 +127,4 @@ async def joined(ctx, member: discord.Member):
     """Says when a member joined."""
     await ctx.send(f'{member.name} joined {discord.utils.format_dt(member.joined_at)}')
 
-bot.run('MTE4MTI1NTc2OTkwODMyMjMxNA.GEXMaW.xqkOrH8QvquhN02GOCH9z0YhF1Z0yDDyAfP1y4')
+bot.run('TOKEN')
