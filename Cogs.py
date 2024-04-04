@@ -1,3 +1,4 @@
+# cogs file when bot wanna to add new feature
 from discord.ext import commands,tasks
 from datetime import datetime
 class MyCog(commands.Cog):
